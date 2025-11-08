@@ -1,16 +1,489 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  background-color: var(--background-color);
+  font-variation-settings: 'wght' var(--font-weight-normal);
+}
+
+/* Header */
+.header {
+  padding-block: 100px 25px; /* Было 136px, уменьшили на 36px чтобы поднять контейнер выше */
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  position: relative;
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header__container {
+  inline-size: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  padding: 130px 125px; /* Увеличили верхний/нижний padding  */
+  position: relative;
+  z-index: 1;
+}
+
+.header__logo {
+  font-size: var(--logo-size);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.header__title {
+  font-size: var(--header-title-size);
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+/* Main content */
+.main {
+  padding: 70px 0 40px; /* Отступ 70px сверху */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: var(--background-color);
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: -90px; /* Градиент начинается выше main */
+  left: 0;
+  right: 0;
+  height: 558px; /* Увеличил высоту градиента до 558px */
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 0;
+}
+
+.main__container {
+  inline-size: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+.card {
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+  position: relative;
+}
+
+/* Card */
+.card {
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+  position: relative;
+  margin: 0 auto; /* Центрируем карточки */
+}
+
+/* Индивидуальные ширины для карточек */
+.card:nth-child(1) {
+  block-size: 956px; /* Первая карточка */
+}
+
+.card:nth-child(2) {
+  block-size: 998px; /* Вторая карточка */
+}
+
+.card:nth-child(3) {
+  block-size: 956px; /* Третья карточка  */
+}
+
+.card:nth-child(4) {
+  block-size: 998px; /* Четвертая карточка */
+}
+
+.card:nth-child(5) {
+  block-size: 1019px; /* Пятая карточка */
+}
+
+.card:nth-child(6) {
+  block-size: 956px; /* Шестая карточка */
+}
+
+.card:nth-child(7) {
+  block-size: 998px; /* Седьмая карточка */
+}
+
+.card:nth-child(8) {
+  block-size: 1040px; /* Восьмая карточка */
+}
+
+.card__title {
+  padding: 5px 10px;
+  border-block-end: 2px solid var(--accent-color);
+  font-size: 18px;
+  line-height: 1.2;
+  font-variation-settings: 'wght' var(--font-weight-bold);
+  background-color: var(--background-color);
+}
+
+.card__image-container {
+  position: relative;
+  border-block-end: 2px solid var(--accent-color);
+}
+
+.card__image {
+  inline-size: 100%;
+  block-size: 696px;
+  object-fit: cover;
+}
+
+.card__label {
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  color: var(--accent-color);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-transform: uppercase;
+  
+  text-shadow: 
+    -1px 0 var(--label-stroke-color),
+    0 1px var(--label-stroke-color),
+    1px 0 var(--label-stroke-color),
+    0 -1px var(--label-stroke-color);
+}
+
+@supports ((text-stroke: 1px var(--label-stroke-color)) or (-webkit-text-stroke: 1px var(--label-stroke-color))) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--label-stroke-color);
+    text-stroke: 1px var(--label-stroke-color);
+  }
+}
+
+.card__content {
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.card__text {
+  font-size: 18px;
+  line-height: 1.19;
+}
+
+.card__opinion {
+  font-size: 18px;
+  line-height: 1.19;
+}
+
+.card__actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Buttons */
+.card__icon-button {
+  inline-size: 50px;
+  block-size: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+}
+
+.card__like-button,
+.save-button,
+.modal__button {
+  position: relative;
+  padding: 10px 35px;
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 0.9;
+  background-color: var(--background-color);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button:focus,
+.save-button:focus,
+.modal__button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible,
+.save-button:focus-visible,
+.modal__button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__like-button::before,
+.save-button::before,
+.modal__button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.card__like-button:hover::before,
+.save-button:hover::before,
+.modal__button:hover::before {
+  transform: scaleX(1);
+}
+
+.button__text {
+  position: relative;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 20px;
+}
+
+.save-icon {
+  inline-size: 21px;
+  block-size: 21px;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+  z-index: 1;
+  position: relative;
+}
+
+/* Modal */
+.modal {
+  padding: 0;
+  border: none;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  max-inline-size: 357px;
+  inline-size: 100%;
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.modal__content {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content;
+  gap: 30px;
+  align-items: center;
+}
+
+.modal__image {
+  grid-row: 1 / -1;
+}
+
+.modal__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__title {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.modal__description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--accent-color);
+}
+
+.modal__button {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+}
+
+/* Image filters */
+.card__image--brightness {
+  filter: brightness(120%);
+}
+
+.card__image--blur {
+  filter: blur(2px);
+}
+
+.card__image--saturate {
+  filter: saturate(200%);
+}
+
+.card__image--grayscale {
+  filter: grayscale(80%);
+}
+
+.card__image--hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.card__image--invert {
+  filter: invert(75%);
+}
+
+.card__image--sepia {
+  filter: sepia(60%);
+}
+
+.card__image--multiple {
+  filter: brightness(110%) contrast(120%) saturate(130%);
+}
+
+.footer {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; 
+  background-color: var(--background-color);
+  padding-left: 1px; /* Добавляем отступ слева */
+}
+
+
+@media (width <= 375px) {
+  .header {
+    padding-block: 116px 20px;
+    background-attachment: scroll; /* Убираем фиксированный фон для мобильных */
+  }
+  
+  .header__container {
+    padding: 120px 0;
+    margin: 0 auto; /* Центрируем контейнер */
+    width: var(--content-width); /* Используем переменную ширины */
+  }
+
+  .main {
+    padding: 80px 0 30px;
+  }
+  
+  .main::before {
+    top: -60px;
+    height: 840px;
+    width: 100%; /* Градиент на всю ширину */
+    left: 0;
+    right: 0;
+    background-attachment: scroll; /* Убираем фиксированный фон */
+  }
+  
+  .main__container {
+    gap: 50px;
+    margin: 0 auto; /* Центрируем контейнер */
+    width: var(--content-width); /* Используем переменную ширины */
+  }
+
+  /* Центрируем карточки */
+  .card {
+    margin: 0 auto;
+    width: 100%; /* Карточки занимают всю ширину контейнера */
+  }
+
+  /* Фиксированные высоты карточек для мобильных */
+  .card:nth-child(1) {
+    block-size: 758px; 
+  }
+
+  .card:nth-child(2) {
+    block-size: 820px; 
+  }
+
+  .card:nth-child(3) {
+    block-size: 736px; 
+  }
+
+  .card:nth-child(4) {
+    block-size: 799px; 
+  }
+
+  .card:nth-child(5) {
+    block-size: 841px; 
+  }
+
+  .card:nth-child(6) {
+    block-size: 715px; 
+  }
+
+  .card:nth-child(7) {
+    block-size: 778px; 
+  }
+
+  .card:nth-child(8) {
+    block-size: 862px; 
+  }
+  
+  .card__image {
+    block-size: 375px;
+  }
+  
+ .card__content {
+    padding: 20px 20px 18px;
+    gap: 20px;
+  }
+
+  .card__text {
+    margin-bottom: 22px; /* Больший отступ после первого абзаца */
+  }
+
+  .card__opinion {
+    margin-bottom: 0; /* У второго абзаца обычный отступ */
+  }
+
+  .card__actions {
+    margin-top: 5px;
+    padding-right: 5px;
+  }
+
+  .save-button {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+  
+  .modal {
+    max-inline-size: 341px;
+    margin: 0 auto; /* Центрируем модальное окно */
+  }
+  
+  .modal__content {
+    padding: 25px;
+    gap: 25px;
+  }
+  
+  .footer {
+    padding: 40px 0;
+    justify-content: center;
+  }
 }
