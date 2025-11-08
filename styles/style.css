@@ -455,7 +455,7 @@
   }
 
   .card__text {
-    margin-bottom: 22px; /* Больший отступ после первого абзаца */
+    margin-bottom: 9px; /* Больший отступ после первого абзаца */
   }
 
   .card__opinion {
