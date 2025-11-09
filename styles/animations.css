@@ -4,7 +4,7 @@
 }
 
 .contour {
-  fill: var(--heart-contour-color);
+  fill: var(--heart-contour);
   transition: fill 0.1s linear;
 }
 
@@ -20,16 +20,17 @@
 
 .sparks {
   opacity: 0;
+  fill: var(--heart-sparks);
 }
 
 /* Hover state */
 .like-icon:hover .core {
-  fill: var(--heart-contour-color);
+  fill: var(--heart-contour);
   transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
-  fill: var(--heart-contour-color);
+  fill: var(--heart-contour);
   transition: fill 0.3s 0.05s linear;
 }
 
@@ -69,21 +70,12 @@
 }
 
 /* Keyframes */
-@keyframes triangle-move {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(4px);
-  }
-}
-
 @keyframes scale {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.25);
+    transform: scale(1.5);
   }
   100% {
     transform: scale(1);
