@@ -263,7 +263,7 @@
   border: none;
   background-color: var(--background-color);
   border: 2px solid var(--accent-color);
-  max-inline-size: 357px;
+  max-inline-size: 353px;
   inline-size: 100%;
 }
 
