@@ -4,6 +4,10 @@
   font-family: var(--main-font);
   background-color: var(--background-color);
   font-variation-settings: 'wght' var(--font-weight-normal);
+  /* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Фон страницы фиксированный */
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* Header */
@@ -12,9 +16,8 @@
   font-family: var(--accent-font);
   text-transform: uppercase;
   position: relative;
-  background-image: var(--background-gradient);
-  background-attachment: fixed;
-  background-size: cover;
+  /* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Убран дублирующий градиент, используем общий фон страницы */
+  background-color: transparent;
 }
 
 .header__container {
@@ -51,21 +54,11 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-color: var(--background-color);
+  /* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Убран белый фон, используем общий градиент */
+  background-color: transparent;
 }
 
-.main::before {
-  content: '';
-  position: absolute;
-  top: -90px;
-  left: 0;
-  right: 0;
-  height: 558px;
-  background-image: var(--background-gradient);
-  background-attachment: fixed;
-  background-size: cover;
-  z-index: 0;
-}
+/* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Удален псевдоэлемент .main::before так как фон теперь общий для всей страницы */
 
 .main__container {
   inline-size: var(--content-width);
@@ -235,7 +228,8 @@
   display: flex;
   justify-content: center;
   padding: 50px 0;
-  background-color: var(--background-color);
+  /* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Убран белый фон, используем общий градиент */
+  background-color: transparent;
 }
 
 .save-button {
@@ -282,7 +276,7 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -348,9 +342,10 @@
 }
 
 @media (width <= 375px) {
+
   .header {
-    padding-block: 116px 20px;
-    background-attachment: fixed; /* Фон остается фиксированным */
+    padding-block: 96px 20px;
+    /* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Фон остается фиксированным для всей страницы */
   }
   
   .header__container {
@@ -363,14 +358,7 @@
     padding: 80px 0 0;
   }
   
-  .main::before {
-    top: -60px;
-    height: 840px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    background-attachment: fixed; /* Фон остается фиксированным */
-  }
+  /* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Удален псевдоэлемент .main::before для мобильной версии */
   
   .main__container {
     gap: 50px;
@@ -410,12 +398,18 @@
   }
 
   .main__save-section {
-    padding: 50px 0;
+    padding: 50px 0 ;
   }
 
   .save-button {
     flex-direction: column;
     padding: 15px 20px;
+    gap: 8px;
+  }
+
+    .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
   }
   
   .modal {
@@ -425,6 +419,6 @@
   
   .modal__content {
     padding: 30px 40px;
-    gap: 30px;
+    gap: 20px;
   }
 }

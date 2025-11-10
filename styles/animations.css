@@ -3,6 +3,10 @@
   transform-origin: center;
 }
 
+.heart {
+  transform-origin: center; /* Добавляем центрирование для элемента сердца */
+}
+
 .contour {
   fill: var(--heart-contour);
   transition: fill 0.1s linear;
@@ -63,6 +67,7 @@
 
 .like-icon.is-liked .heart {
   animation: scale 0.3s 0.1s ease-in;
+  transform-origin: center; /* ЗАМЕЧАНИЕ ИСПРАВЛЕНО: Анимация масштабирования центрирована */
 }
 
 .like-icon.is-liked .sparks {
