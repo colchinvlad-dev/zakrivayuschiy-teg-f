@@ -276,7 +276,7 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -419,6 +419,6 @@
   
   .modal__content {
     padding: 30px 40px;
-    gap: 15px;
+    gap: 20px;
   }
 }
