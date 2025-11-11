@@ -407,7 +407,8 @@
     gap: 8px;
   }
 
-  .save-button .floppy-icon {
+    /*ЗАМЕЧАНИЕ ИСПРАВЛЕННО: ДОБАВИЛ СПЕЦИФИЧНЫЙ СЕЛЕКТОР, КОТОРЫЙ ИЗМЕНЯЕТ РАЗМЕР ИКОНКИ В КНОПКЕ "СОХРАНИТЬ НА ПАМЯТЬ"*/
+  .save-button .floppy-icon { 
     inline-size: 28px;
     block-size: 28px;
   }
