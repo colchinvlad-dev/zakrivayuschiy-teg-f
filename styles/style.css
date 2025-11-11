@@ -407,7 +407,7 @@
     gap: 8px;
   }
 
-    .floppy-icon {
+  .save-button .floppy-icon {
     inline-size: 28px;
     block-size: 28px;
   }
